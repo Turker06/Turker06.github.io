@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProCinAlp · AlperixTV</title>
+  <meta name="description" content="ProCinAlp mobil oyunları (SpiraFall, MATY) ve AlperixTV YouTube kanalı — resmi tanıtım sitesi." />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1353638924620025"
+     crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0c12;
+      --bg-soft: #0f1320;
+      --surface: #141a28;
+      --surface-2: #1a2234;
+      --ink: #f4f7fc;
+      --muted: #93a0b8;
+      --line: rgba(255, 255, 255, 0.08);
+      --accent: #7c5cff;
+      --accent-2: #22d3ee;
+      --yt: #ff3d5a;
+      --glow: rgba(124, 92, 255, 0.35);
+      --radius: 18px;
+      --max: 1180px;
+      --font-display: "Outfit", "Segoe UI", sans-serif;
+      --font-body: "Inter", "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+    .container {
+      width: min(var(--max), calc(100% - 2.5rem));
+      margin-inline: auto;
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(10, 12, 18, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: grid;
+      place-items: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+      box-shadow: 0 0 24px var(--glow);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.15rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), #5b8cff);
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 8px 28px var(--glow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px var(--glow);
+    }
+    .menu-btn {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .menu-btn span {
+      width: 18px;
+      height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      padding: 9.5rem 0 5.5rem;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(124, 92, 255, 0.28), transparent 60%),
+        radial-gradient(ellipse 45% 40% at 15% 70%, rgba(34, 211, 238, 0.16), transparent 55%),
+        radial-gradient(ellipse 30% 30% at 50% 100%, rgba(255, 61, 90, 0.1), transparent 50%),
+        var(--bg);
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent);
+    }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(40px);
+      opacity: 0.55;
+      animation: float 12s ease-in-out infinite;
+    }
+    .orb-1 {
+      width: 280px; height: 280px;
+      background: rgba(124, 92, 255, 0.45);
+      top: 12%; right: 12%;
+    }
+    .orb-2 {
+      width: 180px; height: 180px;
+      background: rgba(34, 211, 238, 0.3);
+      bottom: 18%; left: 8%;
+      animation-delay: -4s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(18px, -24px) scale(1.06); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 2.75rem;
+      align-items: center;
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-bottom: 1.35rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+    .badge .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 10px var(--accent-2);
+    }
+    .badge.yt .dot { background: var(--yt); box-shadow: 0 0 10px var(--yt); }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      font-weight: 800;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 .grad {
+      background: linear-gradient(120deg, #c4b5ff 0%, var(--accent) 40%, var(--accent-2) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-lead {
+      color: var(--muted);
+      font-size: 1.12rem;
+      max-width: 34rem;
+      margin-bottom: 2rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 2.25rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.95rem 1.45rem;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 0.98rem;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #5b8cff);
+      color: white;
+      box-shadow: 0 10px 32px var(--glow);
+    }
+    .btn-yt {
+      background: linear-gradient(135deg, var(--yt), #ff6b7f);
+      color: white;
+      box-shadow: 0 10px 32px rgba(255, 61, 90, 0.28);
+    }
+    .btn-ghost {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--ink);
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.07); }
+
+    .stat-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.75rem;
+    }
+    .stat strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      letter-spacing: -0.02em;
+    }
+    .stat span {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: linear-gradient(160deg, rgba(26, 34, 52, 0.95), rgba(15, 19, 32, 0.9));
+      padding: 1.35rem;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+    }
+    .hero-shots {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.7rem;
+      margin-bottom: 1.15rem;
+    }
+    .shot {
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--surface-2);
+      aspect-ratio: 9 / 16;
+      width: 100%;
+    }
+    .shot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .hero-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.12rem;
+      margin-bottom: 0.35rem;
+    }
+    .hero-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 1.05rem;
+    }
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .chip {
+      padding: 0.38rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(124, 92, 255, 0.14);
+      color: #c9bcff;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .chip.yt {
+      background: rgba(255, 61, 90, 0.14);
+      color: #ffb0ba;
+    }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 5.5rem 0; }
+    .section-head {
+      max-width: 42rem;
+      margin-bottom: 2.75rem;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent-2);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+    .section-head h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 3.5vw, 2.7rem);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 0.85rem;
+    }
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    /* Games */
+    .games {
+      background: linear-gradient(180deg, transparent, rgba(124, 92, 255, 0.05), transparent);
+    }
+    .game-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .game-card {
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--surface);
+      overflow: hidden;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .game-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(124, 92, 255, 0.45);
+      box-shadow: 0 22px 50px rgba(0,0,0,0.28);
+    }
+    .game-art {
+      aspect-ratio: 16 / 9;
+      position: relative;
+      overflow: hidden;
+      background: var(--surface-2);
+    }
+    .game-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .game-icon {
+      position: absolute;
+      left: 1rem;
+      bottom: -1.25rem;
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      border: 3px solid var(--surface);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.3);
+      background: #fff;
+      z-index: 1;
+    }
+    .game-body {
+      padding: 2rem 1.35rem 1.45rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .game-body h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      margin-bottom: 0.45rem;
+    }
+    .game-body p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.15rem;
+    }
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 0.45rem;
+      margin-bottom: 1.35rem;
+    }
+    .feature-list li {
+      color: var(--muted);
+      font-size: 0.9rem;
+      display: flex;
+      gap: 0.55rem;
+      align-items: flex-start;
+    }
+    .feature-list li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      margin-top: 0.55rem;
+      flex-shrink: 0;
+    }
+    .meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-top: auto;
+      margin-bottom: 1.15rem;
+    }
+    .rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: #ffd166;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .tag {
+      padding: 0.32rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .game-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+    .btn-sm {
+      padding: 0.72rem 1.1rem;
+      font-size: 0.9rem;
+    }
+
+    /* Channel */
+    .channel-panel {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+    .panel {
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      padding: 1.75rem;
+    }
+    .panel-feature {
+      background:
+        radial-gradient(ellipse at 90% 10%, rgba(255, 61, 90, 0.22), transparent 45%),
+        linear-gradient(160deg, #1a2234, #121826);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 360px;
+      position: relative;
+      overflow: hidden;
+    }
+    .panel-feature::after {
+      content: "";
+      position: absolute;
+      width: 220px; height: 220px;
+      right: -40px; bottom: -40px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,61,90,0.35), transparent 70%);
+    }
+    .panel-feature h3 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      letter-spacing: -0.02em;
+      margin: 0.85rem 0 0.65rem;
+    }
+    .panel-feature p {
+      color: var(--muted);
+      max-width: 28rem;
+    }
+    .yt-icon {
+      width: 56px; height: 56px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--yt), #ff6b7f);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 12px 30px rgba(255, 61, 90, 0.3);
+    }
+    .yt-icon svg { width: 28px; height: 28px; fill: white; }
+    .video-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .video-item {
+      display: grid;
+      grid-template-columns: 148px 1fr;
+      gap: 0.9rem;
+      padding: 0.55rem;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .video-item:hover {
+      background: rgba(255,255,255,0.03);
+      border-color: var(--line);
+    }
+    .video-thumb {
+      aspect-ratio: 16/9;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      background: var(--surface-2);
+    }
+    .video-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .video-thumb .mini-play {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .video-thumb .mini-play::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      border-style: solid;
+      border-width: 5px 0 5px 8px;
+      border-color: transparent transparent transparent white;
+      width: 0; height: 0;
+    }
+    .video-item h4 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 0.35rem;
+    }
+    .video-item span {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    /* Upcoming */
+    .upcoming-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.15rem;
+    }
+    .upcoming-card {
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(160deg, rgba(26, 34, 52, 0.7), rgba(15, 19, 32, 0.9));
+      padding: 1.45rem;
+      position: relative;
+      overflow: hidden;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+    }
+    .upcoming-card::before {
+      content: "";
+      position: absolute;
+      width: 120px; height: 120px;
+      right: -28px; top: -28px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(34, 211, 238, 0.18), transparent 70%);
+    }
+    .soon-badge {
+      display: inline-flex;
+      align-self: flex-start;
+      padding: 0.32rem 0.72rem;
+      border-radius: 999px;
+      background: rgba(34, 211, 238, 0.12);
+      color: var(--accent-2);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .upcoming-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      margin-bottom: 0.45rem;
+    }
+    .upcoming-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 1rem;
+    }
+    .upcoming-card .tag {
+      margin-top: auto;
+      align-self: flex-start;
+    }
+
+    /* About split */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    .feature-card {
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card::before {
+      content: "";
+      position: absolute;
+      width: 140px; height: 140px;
+      right: -30px; top: -30px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124, 92, 255, 0.22), transparent 70%);
+    }
+    .feature-card.alt::before {
+      background: radial-gradient(circle, rgba(255, 61, 90, 0.2), transparent 70%);
+    }
+    .icon-box {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 1.1rem;
+      background: rgba(124, 92, 255, 0.16);
+      color: #c9bcff;
+    }
+    .feature-card.alt .icon-box {
+      background: rgba(255, 61, 90, 0.16);
+      color: #ffb0ba;
+    }
+    .feature-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      margin-bottom: 0.55rem;
+    }
+    .feature-card p {
+      color: var(--muted);
+    }
+
+    /* CTA */
+    .cta {
+      padding-top: 1rem;
+      padding-bottom: 6rem;
+    }
+    .cta-box {
+      border-radius: 28px;
+      border: 1px solid rgba(124, 92, 255, 0.28);
+      background:
+        radial-gradient(ellipse at 20% 20%, rgba(124, 92, 255, 0.28), transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(34, 211, 238, 0.16), transparent 45%),
+        var(--surface);
+      padding: 3rem 2.5rem;
+      text-align: center;
+    }
+    .cta-box h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+    .cta-box p {
+      color: var(--muted);
+      max-width: 34rem;
+      margin: 0 auto 1.75rem;
+    }
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 2.25rem 0;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .footer-inner p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.25rem;
+    }
+    .footer-links a {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .footer-links a:hover { color: var(--ink); }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero-content,
+      .channel-panel,
+      .split {
+        grid-template-columns: 1fr;
+      }
+      .game-grid,
+      .upcoming-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-shots {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 420px;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: rgba(10, 12, 18, 0.96);
+        border-bottom: 1px solid var(--line);
+        padding: 0.75rem 1.25rem 1.25rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { border-top: 1px solid var(--line); }
+      .nav-links a {
+        display: block;
+        padding: 0.95rem 0.25rem;
+      }
+      .nav-cta {
+        justify-content: center;
+        margin-top: 0.5rem;
+      }
+      .menu-btn { display: inline-flex; }
+      .hero { padding-top: 8rem; }
+    }
+    @media (max-width: 640px) {
+      .video-item { grid-template-columns: 112px 1fr; }
+      .hero-shots { max-width: 100%; }
+      .hero-actions .btn,
+      .cta-actions .btn,
+      .game-actions .btn { width: 100%; justify-content: center; }
+      .cta-box { padding: 2rem 1.25rem; }
+      .hero-shots { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#top">
+        <div class="logo-mark">PA</div>
+        <div>ProCinAlp <span style="color:var(--muted);font-weight:500">·</span> AlperixTV</div>
+      </a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#games">Oyunlar</a></li>
+          <li><a href="#upcoming">Gelecek</a></li>
+          <li><a href="#channel">YouTube</a></li>
+          <li><a href="#about">Hakkında</a></li>
+          <li><a class="nav-cta" href="#cta">Takip Et</a></li>
+        </ul>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-grid"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="container hero-content">
+        <div>
+          <div class="badge-row">
+            <div class="badge"><span class="dot"></span> Google Play · ProCinAlp</div>
+            <div class="badge yt"><span class="dot"></span> YouTube · AlperixTV</div>
+          </div>
+          <h1>
+            Oyun dünyasında<br />
+            <span class="grad">yeni bir sahne</span>
+          </h1>
+          <p class="hero-lead">
+            ProCinAlp ile mobil oyunları keşfet — SpiraFall ve MATY.
+            AlperixTV ile içerikleri izle, yenilikleri kaçırma.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#games">
+              Oyunları Keşfet
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-yt" href="https://www.youtube.com/@AlperixTV" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5L8 5.5z"/></svg>
+              AlperixTV'yi İzle
+            </a>
+          </div>
+          <div class="stat-row">
+            <div class="stat"><strong>2</strong><span>Yayındaki oyun</span></div>
+            <div class="stat"><strong>300+</strong><span>SpiraFall bölümü</span></div>
+            <div class="stat"><strong>PEGI 3</strong><span>Her yaşa uygun</span></div>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Öne çıkan içerik">
+          <div class="hero-shots">
+            <div class="shot">
+              <img src="assets/spirafall-1.png" alt="SpiraFall oyun görseli" />
+            </div>
+            <div class="shot">
+              <img src="assets/maty-1.png" alt="MATY oyun görseli" />
+            </div>
+            <div class="shot">
+              <img src="assets/spirafall-2.png" alt="SpiraFall bölüm görseli" />
+            </div>
+          </div>
+          <h3>Play Store vitrini</h3>
+          <p>SpiraFall ve MATY — ProCinAlp imzasıyla yayında.</p>
+          <div class="chip-row">
+            <span class="chip">Aksiyon</span>
+            <span class="chip">Kelime</span>
+            <span class="chip yt">YouTube</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- GAMES -->
+    <section class="games" id="games">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Play Store · ProCinAlp</div>
+          <h2>Yayınladığımız oyunlar</h2>
+          <p>
+            Google Play üzerinden indirilebilen mobil oyunlarımız.
+            Kartlardaki butonlarla doğrudan mağaza sayfalarına gidebilirsin.
+          </p>
+        </div>
+        <div class="game-grid">
+          <article class="game-card">
+            <div class="game-art">
+              <img src="assets/spirafall-hero.png" alt="SpiraFall kapak görseli" />
+              <img class="game-icon" src="assets/spirafall-icon.png" alt="SpiraFall ikonu" />
+            </div>
+            <div class="game-body">
+              <h3>SpiraFall</h3>
+              <p>
+                Sarmal Düşüş — tek parmakla oynanan hızlı ve akıcı bir 3B arcade oyunu.
+                Kuleyi döndür, boşlukları yakala ve katmanların arasından kesintisiz düş.
+              </p>
+              <ul class="feature-list">
+                <li>Giderek zorlaşan 300 bölüm</li>
+                <li>40 premium skin ve lig hedefleri</li>
+                <li>Tek parmak kontrol, ustalaşması zor</li>
+              </ul>
+              <div class="meta">
+                <div class="tag">Aksiyon · PEGI 3</div>
+                <div class="rating">★ Arcade</div>
+              </div>
+              <div class="game-actions">
+                <a class="btn btn-primary btn-sm" href="https://play.google.com/store/apps/details?id=com.sarmaldusus.neontower&hl=tr" target="_blank" rel="noopener">
+                  Play Store'da Aç
+                </a>
+                <a class="btn btn-ghost btn-sm" href="https://spirafall-destek-d7c8a.web.app" target="_blank" rel="noopener">
+                  Destek
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <div class="game-art">
+              <img src="assets/maty-hero.png" alt="MATY kapak görseli" />
+              <img class="game-icon" src="assets/maty-icon.png" alt="MATY ikonu" />
+            </div>
+            <div class="game-body">
+              <h3>MATY: Kelime Yolculuğu</h3>
+              <p>
+                Harflerin arasında gizlenen Türkçe kelimeleri keşfet, bulmacaları tamamla
+                ve birbirinden güzel manzaralarda yolculuğa çık.
+              </p>
+              <ul class="feature-list">
+                <li>Kolay ve Normal iki oyun modu</li>
+                <li>İpucu, elmas ve günlük ödüller</li>
+                <li>İnternetsiz oynanabilen kelime bulmacası</li>
+              </ul>
+              <div class="meta">
+                <div class="tag">Kelime · PEGI 3</div>
+                <div class="rating">★ Bulmaca</div>
+              </div>
+              <div class="game-actions">
+                <a class="btn btn-primary btn-sm" href="https://play.google.com/store/apps/details?id=com.maty.kelimeyolculugu&hl=tr" target="_blank" rel="noopener">
+                  Play Store'da Aç
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPCOMING -->
+    <section id="upcoming">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Kapalı test · Geliştirme aşamasında</div>
+          <h2>Gelecek oyunlar</h2>
+          <p>
+            Play Store kapalı testinde olan ve yakında yayınlanacak projelerimiz.
+            Hazır olduğunda buradan ve AlperixTV’den duyuracağız.
+          </p>
+        </div>
+        <div class="upcoming-grid">
+          <article class="upcoming-card">
+            <span class="soon-badge">Kapalı test</span>
+            <h3>Yeni proje</h3>
+            <p>
+              Test aşamasındaki bir sonraki oyunumuz. Detaylar yakında —
+              takipte kal.
+            </p>
+            <span class="tag">Yakında</span>
+          </article>
+          <article class="upcoming-card">
+            <span class="soon-badge">Kapalı test</span>
+            <h3>İkinci proje</h3>
+            <p>
+              Farklı bir türde, yine ProCinAlp imzasıyla geliştiriliyor.
+            </p>
+            <span class="tag">Yakında</span>
+          </article>
+          <article class="upcoming-card">
+            <span class="soon-badge">Geliştirme</span>
+            <h3>Daha fazlası yolda</h3>
+            <p>
+              Yeni fikirler ve prototipler üzerinde çalışıyoruz.
+              İlk siz duyun.
+            </p>
+            <span class="tag">Takipte kal</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHANNEL -->
+    <section id="channel">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">YouTube · AlperixTV</div>
+          <h2>Kanalda neler var?</h2>
+          <p>
+            Oyun videoları, incelemeler, rehberler ve eğlenceli anlar.
+            Yeni bölümler için kanala abone ol.
+          </p>
+        </div>
+        <div class="channel-panel">
+          <div class="panel panel-feature">
+            <div>
+              <div class="yt-icon">
+                <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5L8 5.5z"/></svg>
+              </div>
+              <h3>AlperixTV</h3>
+              <p>
+                Ailece eğlence, oyun ve challenge! AlperixTV’de güncel videolar,
+                kamera arkası ve keyifli seriler seni bekliyor.
+              </p>
+            </div>
+            <div class="hero-actions" style="margin:1.5rem 0 0">
+              <a class="btn btn-yt" href="https://www.youtube.com/@AlperixTV" target="_blank" rel="noopener">
+                Kanala Git
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a class="btn btn-ghost" href="#cta">Abone Ol</a>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="video-list">
+              <a class="video-item" href="https://www.youtube.com/watch?v=mwWI3T1wGVs" target="_blank" rel="noopener">
+                <div class="video-thumb">
+                  <img src="assets/yt-mwWI3T1wGVs.jpg" alt="Bungalov evde havuz keyfi" />
+                  <div class="mini-play"></div>
+                </div>
+                <div>
+                  <h4>Bungalov Evde Havuz Keyfi! Alper'in Eğlence Dolu Günü</h4>
+                  <span>Alperix TV</span>
+                </div>
+              </a>
+              <a class="video-item" href="https://www.youtube.com/watch?v=HuTjaMpyXUI" target="_blank" rel="noopener">
+                <div class="video-thumb">
+                  <img src="assets/yt-HuTjaMpyXUI.jpg" alt="Kamera arkası anları" />
+                  <div class="mini-play"></div>
+                </div>
+                <div>
+                  <h4>Hiç Yayınlanmayan Kamera Arkası Anları!</h4>
+                  <span>Alperix TV</span>
+                </div>
+              </a>
+              <a class="video-item" href="https://www.youtube.com/watch?v=23RoPJB-giU" target="_blank" rel="noopener">
+                <div class="video-thumb">
+                  <img src="assets/yt-23RoPJB-giU.jpg" alt="Buzda kayma anları" />
+                  <div class="mini-play"></div>
+                </div>
+                <div>
+                  <h4>Bu Buz Çok Kaygan! Alper Hollanda’da</h4>
+                  <span>Alperix TV</span>
+                </div>
+              </a>
+            </div>
+            <div style="margin-top:1rem">
+              <a class="btn btn-ghost btn-sm" href="https://www.youtube.com/@AlperixTV/videos" target="_blank" rel="noopener">
+                Tüm videoları gör
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Neden buradayız?</div>
+          <h2>Oyun + içerik, tek çatı altında</h2>
+          <p>ProCinAlp oyunlarını üretir, AlperixTV onları dünyaya anlatır. İkisi birlikte büyür.</p>
+        </div>
+        <div class="split">
+          <article class="feature-card">
+            <div class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>
+            </div>
+            <h3>ProCinAlp Oyunları</h3>
+            <p>
+              Google Play üzerinden yayınladığımız SpiraFall ve MATY ile
+              oyunculara keyifli, modern ve erişilebilir mobil deneyimler sunuyoruz.
+            </p>
+          </article>
+          <article class="feature-card alt">
+            <div class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 10l4.55-2.27A1 1 0 0121 8.6v6.8a1 1 0 01-1.45.87L15 14"/><rect x="3" y="6" width="12" height="12" rx="2"/></svg>
+            </div>
+            <h3>AlperixTV Kanalı</h3>
+            <p>
+              Ailece eğlence, oyun ve challenge içerikleriyle toplulukla
+              bağ kuruyoruz. Yeni bölümlerle sürekli üretiyoruz.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Hazırsan başlayalım</h2>
+          <p>
+            SpiraFall ve MATY'yi indir, YouTube kanalına abone ol ve
+            yenilikleri ilk sen gör.
+          </p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/developer?id=ProCinAlp&hl=tr" target="_blank" rel="noopener">
+              ProCinAlp · Play Store
+            </a>
+            <a class="btn btn-yt" href="https://www.youtube.com/@AlperixTV" target="_blank" rel="noopener">
+              YouTube Abone Ol
+            </a>
+            <a class="btn btn-ghost" href="mailto:gunlerdensen06@gmail.com">İletişim</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2026 ProCinAlp · AlperixTV. Tüm hakları saklıdır.</p>
+      <div class="footer-links">
+        <a href="#games">Oyunlar</a>
+        <a href="#upcoming">Gelecek</a>
+        <a href="#channel">YouTube</a>
+        <a href="#about">Hakkında</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    menuBtn?.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+    navLinks?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => navLinks.classList.remove("open"));
+    });
+  </script>
+</body>
+</html>
