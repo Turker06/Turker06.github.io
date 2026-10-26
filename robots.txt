@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://turker06.github.io/sitemap.xml
