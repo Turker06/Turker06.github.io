@@ -14,3 +14,6 @@ body,.home{background:#0a0c12;color:#f4f7fc}h1,h2,h3,h4,em,.card-number{font-fam
 @media(max-width:760px){.world-nav{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:0}.world-nav a:nth-child(4){border-left:1px solid #ffffff20;padding-left:12px}}
 
 .reading-band{background:#101626;color:#f4f7fc}.reading-band p,.home .reading-band .section-heading>p,.editorial-links p{color:#b9c4d8}.reading-band .eyebrow,.editorial-links span{color:#a8a5ff}.editorial-links h3{color:#f4f7fc}.editorial-links a{border-color:#ffffff29}.cover-game{background:#141a28}.lounge-feature{background:#0f1320}
+
+/* Keep supporting copy readable on the dark cards. */
+.aside-card p,.aside-card.pale p{color:#b9c4d8}
